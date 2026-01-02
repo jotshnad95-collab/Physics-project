@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quantum Glitch - Double Slit Simulation</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Electrolize&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="quantum_glitch.css">
+
+  <!-- Plotly -->
+  <script src="https://cdn.plot.ly/plotly-2.31.1.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Splash -->
+  <div id="intro-splash">
+    <div class="intro-text">Seeing the Unseen</div>
+  </div>
+
+  <!-- Page 1 -->
+  <div class="container" id="page1">
+    <h1 class="main-title">Young's Double Slit &amp; The Quantum Eraser</h1>
+    <div class="note-box">
+      Young's Double Slit Experiment demonstrates the wave nature of light and the foundations of quantum mechanics.
+    </div>
+    <button id="start-button">LET'S DIVE INTO SIMULATION</button>
+  </div>
+
+  <!-- Page 2 -->
+  <div class="container hidden" id="page2">
+    <h2>⚛️ Simulation Instructions</h2>
+    <ul>
+      <li><strong>Wavelength:</strong> Controls particle energy</li>
+      <li><strong>Slit Separation:</strong> Affects fringe width</li>
+      <li><strong>Screen Distance:</strong> Changes interference spread</li>
+      <li><strong>Entanglement:</strong> Enables quantum eraser</li>
+    </ul>
+    <button id="agree-button">I AGREE AND CONTINUE</button>
+    <button class="back-button" id="back2">← Back</button>
+  </div>
+
+  <!-- Simulation -->
+  <div class="hidden" id="simulation">
+    <header class="sim-header">
+      <button id="back-btn" class="sim-btn">← Back</button>
+      <h1>Quantum Simulation</h1>
+      <p>Observe interference patterns under quantum conditions</p>
+    </header>
+
+    <main class="sim-container">
+      <div class="controls">
+        <label>λ (nm)</label>
+        <input id="lambda" type="range" min="200" max="1200" value="600">
+        <span id="lambda-val">600</span>
+
+        <label>Slit Separation (mm)</label>
+        <input id="slit" type="range" min="0.01" max="1" step="0.01" value="0.1">
+        <span id="slit-val">0.1</span>
+
+        <label>Screen Distance (m)</label>
+        <input id="screen" type="range" min="0.1" max="3" step="0.01" value="1">
+        <span id="screen-val">1</span>
+
+        <label>Polarizer (°)</label>
+        <input id="polarizer" type="range" min="0" max="180" value="74">
+        <span id="polarizer-val">74</span>
+
+        <label>Entanglement</label>
+        <select id="entanglement">
+          <option value="none">None</option>
+          <option value="which">Which-path</option>
+          <option value="eraser">Quantum Eraser</option>
+        </select>
+
+        <button id="submit-btn" class="sim-btn primary">Submit</button>
+        <button id="clear-btn" class="sim-btn">Clear</button>
+      </div>
+
+      <div class="plot-area hidden" id="plot-section">
+        <div id="plot"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- JS -->
+  <script src="quantum_glitch.js"></script>
+</body>
+</html>
