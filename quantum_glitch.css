@@ -1,0 +1,103 @@
+:root {
+  --neon: #00ffff;
+  --bg: #0a0a1a;
+  --font-main: 'Fira Code', monospace;
+  --font-title: 'Electrolize', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--neon);
+  font-family: var(--font-main);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+#intro-splash {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-text {
+  font-size: 3em;
+  font-family: var(--font-title);
+  animation: fade 2s ease forwards;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.container {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 600px;
+  max-width: 90%;
+  padding: 30px;
+  background: rgba(0,0,0,0.7);
+  border: 2px solid var(--neon);
+  text-align: center;
+}
+
+.note-box {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px dashed var(--neon);
+}
+
+button {
+  padding: 10px 20px;
+  background: none;
+  border: 2px solid var(--neon);
+  color: var(--neon);
+  cursor: pointer;
+}
+
+.sim-header {
+  text-align: center;
+}
+
+.sim-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.controls {
+  width: 300px;
+  background: #111820;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.controls label {
+  display: block;
+  margin-top: 10px;
+}
+
+.controls input,
+.controls select {
+  width: 100%;
+}
+
+.plot-area {
+  flex: 1;
+  background: #111820;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#plot {
+  height: 400px;
+}
